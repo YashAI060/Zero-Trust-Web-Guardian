@@ -5,7 +5,7 @@ import os
 def test_asi_one_api():
     # Replace with your actual ASI:One API key, or set it as an environment variable
     # e.g., os.environ['ASI_ONE_API_KEY'] = 'your_api_key_here'
-    api_key = os.environ.get("ASI_ONE_API_KEY", "sk_0ce41c99fcb94c499c73c1d6ac839163f7ea9a1caa984a36a9edf6af424e6214")
+    api_key = os.environ.get("ASI_ONE_API_KEY", "Enter_Your_API")
     
     if api_key == "sk_0ce41c99fcb94c499c73c1d6ac839163f7ea9a1caa984a36a9edf6af424e6214":
         print("Warning: Please replace 'YOUR_API_KEY_HERE' with your actual API key.")
