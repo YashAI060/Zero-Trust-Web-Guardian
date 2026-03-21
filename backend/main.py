@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
-# .env file se API key load karein
+# Load API key from the .env file
 load_dotenv()
 
 app = FastAPI()
@@ -35,7 +35,7 @@ async def analyze_webpage(data: WebData):
         "Authorization": f"Bearer {API_KEY}"
     }
     
-    # System ko batana ki use sirf JSON return karna hai
+    # Instruct the system to return strictly JSON
     system_prompt = """You are a top-tier cybersecurity AI. Analyze the URL and webpage content for phishing, social engineering, or scam indicators. 
     Provide the output strictly in JSON format with these exact keys:
     - "trust_score": (integer 0-100, where 100 is completely safe and 0 is extremely malicious)
@@ -44,7 +44,7 @@ async def analyze_webpage(data: WebData):
     - "reason": (1-2 short sentences explaining the score)
     Do NOT output any markdown blocks or extra text, just the raw JSON object."""
     
-    # User ka actual data
+    # The actual data from the user
     user_prompt = f"URL: {data.url}\nContent Snippet: {data.content}"
     
     payload = {
@@ -61,10 +61,10 @@ async def analyze_webpage(data: WebData):
         
         api_result = response.json()
         
-        # OpenAI format se text nikalna
+        # Extract text using the OpenAI format
         result_text = api_result['choices'][0]['message']['content']
         
-        # Clean up (Agar AI galti se ```json laga de)
+        # Clean up (In case the AI accidentally wraps the response in markdown blocks)
         result_text = result_text.replace("```json", "").replace("```", "").strip()
         
         return json.loads(result_text)

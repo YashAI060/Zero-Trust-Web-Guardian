@@ -4,7 +4,7 @@ import json
 import requests
 from dotenv import load_dotenv
 
-# API Key Load karna
+# Load the API Key
 load_dotenv()
 API_KEY = os.getenv("ASI_ONE_API_KEY")
 API_URL = "https://api.asi1.ai/v1/chat/completions"
@@ -16,12 +16,12 @@ YELLOW = '\033[93m'
 RESET = '\033[0m'
 
 def load_system_prompt():
-    # Prompts.txt se instruction read karna
+    # Read instructions from prompts.txt
     try:
         with open("prompts.txt", "r") as f:
             return f.read()
     except FileNotFoundError:
-        print(f"{RED}Error: prompts.txt file nahi mili. Please create it.{RESET}")
+        print(f"{RED}Error: prompts.txt file not found. Please create it.{RESET}")
         exit()
 
 def analyze_log_with_asi(log_entry, system_prompt):
@@ -57,7 +57,7 @@ def start_agent():
     system_prompt = load_system_prompt()
     log_file = "server_logs.json"
     
-    # File open karke end tak chale jana taaki sirf naye logs padhe
+    # Open the file and seek to the end to only read new logs
     try:
         with open(log_file, "r") as f:
             f.seek(0, os.SEEK_END)
@@ -65,12 +65,12 @@ def start_agent():
             while True:
                 line = f.readline()
                 
-                # Agar naya log nahi hai, toh 1 second wait karo
+                # Wait for 1 second if there are no new logs
                 if not line:
                     time.sleep(1)
                     continue
                 
-                # Cleanup (Agar file JSON array ya JSONL format mein ho)
+                # Cleanup (In case the file is in JSON array or JSONL format)
                 clean_line = line.strip().strip(',').strip('[').strip(']')
                 if not clean_line: 
                     continue
@@ -79,20 +79,20 @@ def start_agent():
                     log_entry = json.loads(clean_line)
                     print(f"⏳ Analyzing Activity: {log_entry.get('activity')} from IP {log_entry.get('ip_address')}...")
                     
-                    # AI ko log bhejna
+                    # Send the log to the AI
                     analysis = analyze_log_with_asi(log_entry, system_prompt)
                     
-                    # Result ke hisaab se color print karna
+                    # Print result with corresponding colors
                     if analysis.get('status') == 'ALERT' or analysis.get('status') == 'CRITICAL':
                         print(f"{RED}🚨 [THREAT BLOCKED] Reason: {analysis.get('reason')}{RESET}\n")
                     else:
                         print(f"{GREEN}✅ [TRAFFIC ALLOWED] Reason: {analysis.get('reason')}{RESET}\n")
                         
                 except json.JSONDecodeError:
-                    pass # Invalid JSON lines ko ignore karna
+                    pass # Ignore lines with invalid JSON
                     
     except FileNotFoundError:
-        print(f"{RED}Error: server_logs.json nahi mili. Pehle log_generator.py run karein.{RESET}")
+        print(f"{RED}Error: server_logs.json not found. Run log_generator.py first.{RESET}")
 
 if __name__ == "__main__":
     start_agent()

@@ -10,11 +10,11 @@ document.getElementById('analyzeBtn').addEventListener('click', async () => {
     try {
         let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-        // 1. Current tab ke andar script inject karke page ka text nikalna
+        // 1. Inject script into the current tab to extract page text
         const injectionResults = await chrome.scripting.executeScript({
             target: { tabId: tab.id },
             func: () => {
-                // Sirf first 3000 characters bhej rahe hain taaki API limit cross na ho aur speed fast rahe
+                // Only send the first 3000 characters to avoid API limits and ensure fast performance
                 return document.body.innerText.substring(0, 3000);
             }
         });
@@ -23,8 +23,7 @@ document.getElementById('analyzeBtn').addEventListener('click', async () => {
 
         analyzeBtn.innerText = "Analyzing with AI...";
 
-        // 2. Data Backend ko bhejna
-        // 2. Data Backend ko bhejna
+        // 2. Send data to the backend
         const response = await fetch("http://127.0.0.1:8000/analyze", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -36,7 +35,7 @@ document.getElementById('analyzeBtn').addEventListener('click', async () => {
 
         const data = await response.json();
 
-        // 3. UI Update karna
+        // 3. Update the UI
         resultDiv.style.display = 'block';
 
         if (data.trust_score < 40) {

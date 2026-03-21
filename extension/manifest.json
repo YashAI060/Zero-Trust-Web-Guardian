@@ -1,18 +1,22 @@
 {
-    "manifest_version": 3,
-    "name": "Zero-Trust Web Guardian",
-    "version": "1.0",
-    "description": "AI-powered real-time phishing and scam detection.",
-    "action": {
-        "default_popup": "popup.html",
-        "default_title": "Analyze Webpage"
-    },
-    "permissions": [
-        "activeTab",
-        "scripting"
-    ],
-    "host_permissions": [
-        "http://127.0.0.1/*",
-        "<all_urls>"
-    ]
+  "manifest_version": 3,
+  "name": "Zero-Trust Web Guardian",
+  "version": "2.0",
+  "description": "Proactive AI-powered phishing and scam detection.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Analyze Webpage"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
