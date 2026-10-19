@@ -6,7 +6,7 @@
 
 ## 🎬 Demo Video
 
-> **[Click to watch the live demo video on Google Drive](https://lnkd.in/p/dP_3jfNi)** — Recorded live from the browser extension and backend agent interaction.
+> **[Click to watch the live demo video on LinkedIN](https://lnkd.in/p/dP_3jfNi)** — Recorded live from the browser extension and backend agent interaction.
 
 ---
 
@@ -150,11 +150,22 @@ sequenceDiagram
 ## 10. Data Model & API Reference
 
 ```mermaid
-erDiagram
-    EXTENSION ||--o{ BACKEND_API : sends_telemetry
-    BACKEND_API ||--{ ASI_ENGINE : evaluates_intent
-    SERVER_LOGS ||--o{ SECURITY_AGENT : monitors_records
-    SECURITY_AGENT ||--o{ ASI_ENGINE : checks_threat_level
+graph LR
+    subgraph Client Layer
+        A[Chrome Extension] -->|Telemetry / DOM Snapshot| B[FastAPI Backend Hub]
+    end
+
+    subgraph Server & Agent Layer
+        D[Log Generator] -->|Mock Logs| E[server_logs.json]
+        E -->|Read Records| F[Autonomous Security Agent]
+    end
+
+    subgraph Intelligence Engine
+        B -->|Query Context| G[ASI-1 AI Model]
+        F -->|Evaluate Intent| G
+        G -->|Risk Verdict| B
+        G -->|Block Action| F
+    end
 
 ```
 
@@ -166,8 +177,6 @@ erDiagram
 | `/analyze` | POST | Extension | Evaluates DOM snapshots and URL metadata for phishing markers. |
 | `/logs` | GET / POST | Admin | Manages live server log ingestion and tracking. |
 | `/healthz` | GET | Anyone | Database and configuration integrity check. |
-
----
 
 ## 11. Deployment & Local Run
 
@@ -240,4 +249,5 @@ Zero-Trust-Guardian/
 ## 14. Team & Credits
 
 * **Project Name:** Zero Trust WebGuardian
+* **Built By Yash Raj & Jami Ahad submitted to API Innovate 2026 Hackathon**
 * **Tech Stack:** Python, FastAPI, Uvicorn, JavaScript, Chrome Extension Manifest V3, ASI-1 API.
