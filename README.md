@@ -6,7 +6,7 @@
 
 ## 🎬 Demo Video
 
-> **[Click to watch the live demo video on Google Drive](https://www.google.com/search?q=%23)** — Recorded live from the browser extension and backend agent interaction.
+> **[Click to watch the live demo video on Google Drive](https://lnkd.in/p/dP_3jfNi)** — Recorded live from the browser extension and backend agent interaction.
 
 ---
 
@@ -49,8 +49,7 @@ Relying solely on legacy heuristics leaves blind spots for dynamic social engine
 
 ## 3. Try It as a Judge
 
-* **Live App:** `http://localhost:8000` (or your deployment URL)
-* **Demo Credentials:** Username: `admin` | Password: `secure-password`
+* **Live App:** `http://localhost:8000` 
 * **No login needed:** Open `fake-scam.html` to trigger the client-side phishing quarantine.
 
 **A quick run, about 3 minutes:**
