@@ -4,13 +4,13 @@
 
 ---
 
-## 🎬 Demo Video
+## Demo Video
 
 > **[Click to watch the live demo video on LinkedIN](https://lnkd.in/p/dP_3jfNi)** — Recorded live from the browser extension and backend agent interaction.
 
 ---
 
-## 📑 Contents
+## Contents
 
 1. [The Problem](https://www.google.com/search?q=%231-the-problem)
 2. [What Zero Trust WebGuardian Does](https://www.google.com/search?q=%232-what-zero-trust-webguardian-does)
