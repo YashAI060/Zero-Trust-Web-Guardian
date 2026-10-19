@@ -10,22 +10,21 @@
 
 ---
 
-## Contents
-
-1. [The Problem](https://www.google.com/search?q=%231-the-problem)
-2. [What Zero Trust WebGuardian Does](https://www.google.com/search?q=%232-what-zero-trust-webguardian-does)
-3. [Try It as a Judge](https://www.google.com/search?q=%233-try-it-as-a-judge)
-4. [System Architecture](https://www.google.com/search?q=%234-system-architecture)
-5. [How Threat Detection Works](https://www.google.com/search?q=%235-how-threat-detection-works)
-6. [The AI Agents & Components](https://www.google.com/search?q=%236-the-ai-agents--components)
-7. [Features](https://www.google.com/search?q=%237-features)
-8. [Fake Reports & Misuse Prevention](https://www.google.com/search?q=%238-fake-reports--misuse-prevention)
-9. [Reliability & Fallbacks](https://www.google.com/search?q=%239-reliability--fallbacks)
-10. [Data Model & API Reference](https://www.google.com/search?q=%2310-data-model--api-reference)
-11. [Deployment & Local Run](https://www.google.com/search?q=%2311-deployment--local-run)
-12. [Project Structure](https://www.google.com/search?q=%2312-project-structure)
-13. [Limits & What’s Next](https://www.google.com/search?q=%2313-limits--whats-next)
-14. [Team & Credits](https://www.google.com/search?q=%2314-team--credits)
+## 📑 Contents
+1. [The Problem](#1-the-problem)
+2. [What Zero Trust WebGuardian Does](#2-what-zero-trust-webguardian-does)
+3. [Try It as a Judge](#3-try-it-as-a-judge)
+4. [System Architecture](#4-system-architecture)
+5. [How Threat Detection Works](#5-how-threat-detection-works)
+6. [The AI Agents & Their Work](#6-the-ai-agents--their-work)
+7. [Features](#7-features)
+8. [Fake Reports & Misuse Prevention](#8-fake-reports--misuse-prevention)
+9. [Reliability & Fallbacks](#9-reliability--fallbacks)
+10. [Data Model & API Reference](#10-data-model--api-reference)
+11. [Deployment & Local Run](#11-deployment--local-run)
+12. [Project Structure](#12-project-structure)
+13. [Limits & What’s Next](#13-limits--whats-next)
+14. [Team & Credits](#14-team--credits)
 
 ---
 
