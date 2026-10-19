@@ -1,6 +1,8 @@
+<div align="center">
+
 # **Zero Trust WebGuardian**
 
-> An AI-powered, proactive dual-layer cybersecurity shield for modern web apps and server infrastructure. It protects users from zero-day phishing attacks in the browser and defends servers against malicious network activities using the ASI-1 AI model.
+A proactive dual-layer cybersecurity shield: browser-level zero-day phishing protection and autonomous server-side network defense. AI agents run the threat analysis, and a security officer approves every critical mitigation step.
 
 ---
 
@@ -9,8 +11,10 @@
 > **[Click to watch the live demo video on LinkedIN](https://lnkd.in/p/dP_3jfNi)** — Recorded live from the browser extension and backend agent interaction.
 
 ---
+</div>
 
-## 📑 Contents
+
+## Contents
 1. [The Problem](#1-the-problem)
 2. [What Zero Trust WebGuardian Does](#2-what-zero-trust-webguardian-does)
 3. [Try It as a Judge](#3-try-it-as-a-judge)
